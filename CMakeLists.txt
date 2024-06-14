@@ -13,7 +13,7 @@ include(GNUInstallDirs)
 
 # Adding interface target for compiler flags
 add_library(compile_options INTERFACE)
-target_compile_options(compile_options INTERFACE -Wall -pedantic $<IF:$<CONFIG:Debug>,-O0,-O2>)
+target_compile_options(compile_options INTERFACE -Wall -pedantic $<IF:$<CONFIG:Debug>,-O0,-O2> -fPIC)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
 	target_compile_options(compile_options INTERFACE -Wextra -Wshadow -Wwrite-strings -Wno-unused -g)
 endif()

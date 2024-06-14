@@ -1,3 +1,4 @@
+.builddir
 .deps
 .libs
 *.o
